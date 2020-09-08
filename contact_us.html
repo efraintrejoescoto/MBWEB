@@ -1,0 +1,149 @@
+<section id="contactus" class="section-contactus"> 
+
+	<section class="contactus-form">
+		<header>
+			<h1 class="contactus-h1">Contaco Dali imagen</h1>
+		</header>
+		<article class="contactus-info">
+		  <p>Nos pondremos en contacto con usted.<br/>
+		Gracias.
+		</p></article>		
+		<form class="cmxform" action="" id="contactForm" method="post">
+			<fieldset class="contact-set" id="div_contact_set">
+				<ul>
+					<li>
+						<label for="name" class="form-label">Nombre</label>
+						<input name="name" class="form-field" type="text" placeholder="tu nombre">
+					</li>
+					<li>
+						<label for="email" class="form-label">Email</label>
+						<input name="email" class="form-field" type="email" placeholder="tuemail@website.com">
+					</li>
+					<li>
+						<label for="phone" class="form-label">Telefono</label>
+						<input name="phone" class="form-field" type="tel" placeholder="(Country) + (Area) + Number">
+					</li>
+					<li>
+						<label for="message" class="form-label">Mensaje</label>
+						<textarea rows="3" name="message" class="form-message" placeholder="mensaje"></textarea>
+					</li>
+					<li>
+						<label class="form-label"></label>
+						<img id="captcha" src="captcha/securimage_show.php.htm" alt="CAPTCHA Image" />
+						<input type="image" src="captcha/images/refresh.gif" alt="refresh image" border="0" onclick="document.getElementById('captcha').src = 'captcha/securimage_show.php^.htm' + Math.random(); return false"/>
+					</li>
+					<li>
+						<label for="captcha_code" class="form-label">Verificar</label>
+						<input class="form-field" type="text" name="captcha_code" id="captcha_code" maxlength="10" />
+						
+					</li> 
+					
+					<li>					
+					<div class="submit-btn"><a href="javascript:submitForm();">Submit</a></div>
+					</li>
+				</ul>
+			</fieldset>
+			<p id="div_contact_msg" style="text-align: left;"></p>
+		</form>
+	</section>
+	<section class="contactus-address">
+		<header>
+			<h1 class="contactus-h1">Dali Imagen</h1>
+		</header>
+		<article class="contactus-info">
+		Saturno 434 col. la carmona<br />
+       (Esq. Hilario medina)<br />
+       Dali imagen<br />
+       TEL.: [477]7162449<br />
+		</article>
+		<div id="map_canvas" style="width: 250px; height: 250px; margin: 5px">
+		</div>
+	</section>
+</section>
+
+<script>
+function submitForm() {
+	$('#contactForm').submit();
+}
+$(document).ready(function(){
+	initialize();
+	var geocoder;
+	var map;
+	function initialize() {
+		geocoder = new google.maps.Geocoder();
+		var myOptions = {
+		  zoom: 16,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var address = 'Crown St & Liverpool St, Darlinghurst New South Wales 2010, Australia';
+		geocoder.geocode( { 'address': address}, function(results, status) {
+		  if (status == google.maps.GeocoderStatus.OK) {
+			map.setCenter(results[0].geometry.location);
+			var marker = new google.maps.Marker({
+				map: map, 
+				position: results[0].geometry.location
+			});
+		  } else {
+			alert("Geocode was not successful for the following reason: " + status);
+		  }
+		});
+	}
+
+	Cufon.replace('.contactus-h1', {fontFamily: 'Rockwell'});
+	Cufon.replace('.form-label', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.contactus-info', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.submit-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	
+	$.validator.addMethod("phoneLax", function(phone_number, element) {
+		phone_number = phone_number.replace(/\s+/g, ""); 
+		return this.optional(element) || phone_number.length > 9 &&
+			phone_number.match(/^((\d[-. ]?)?((\(\d{3}\))|\d{3}))?[-. ]?\d{3}[-. ]?\d{4}$/);
+	}, "Please enter a valid phone number.");
+
+
+	$("#contactForm").validate({
+		rules: {
+			name: "required",	
+			phone: {
+				required: true,
+				phoneLax: true
+			},							
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			name: "",
+			phone: "",			
+			email: ""
+		},
+		submitHandler: function(form) {
+			var form_data = $('#contactForm').serialize();
+			$.ajax({
+				url: 'contact_us.php.htm',
+				dataType: 'html',
+				type: "POST",
+				data: form_data,
+				success: function(data) {
+					if(data == 'CAPTCHA') {
+						$('#captcha_code').addClass('error');
+					} else if(data == 'OK') {
+						$('#div_contact_set').hide();
+						$('#div_contact_msg').html("<br/>Thank you for your message. our staff will be with you shortly");
+					} else {
+						$('#div_contact_set').hide();
+						$('#div_contact_msg').html("<br/>Sorry. your message was not sent to Dotty Style Creative. Please try again later.");
+					}
+					Cufon.replace('#div_contact_msg', {fontFamily: 'Gotham-Medium'});		
+				}
+
+			});
+		}
+
+	});
+	
+});	
+</script>

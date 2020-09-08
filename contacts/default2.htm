@@ -1,0 +1,198 @@
+<style type="text/css">
+#contactus table tr td header .contactus-h1 {
+	text-align: center;
+}
+#contactus table tr td .contactus-info p {
+	text-align: center;
+}
+</style>
+<section id="contactus" class="section-contactus">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div id="bodywrapper">
+      <!---content--->
+      <div class="container" id="content">
+        <div class="span-17 prefix-1 last">
+          <!-- Accrisoft Freedom v/8 Jan 16, 2013 -->
+          <script type="text/javascript">
+//<![CDATA[
+function Validator(form) {
+  var obj;
+  var errorMsg=''; 
+  var REGEX_EMAIL = /^[a-z0-9&.+_-]+@(([a-z0-9\._-]+\.+[a-z]{2,})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))$|^"[a-z0-9&.+_' -]+@(([a-z0-9\._-]+\.+[a-z]{2,})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))"$/i;
+  obj = document.getElementById('IDFormField_First_Name_0'); if (obj != null) { if (obj.value == '') { errorMsg += "Please enter your name.\n"; } }
+  obj = document.getElementById('IDFormField_Last_Name_0'); if (obj != null) { if (obj.value == '') { errorMsg += "\n"; } }
+  obj = document.getElementById('IDFormField_Email_0'); if (obj != null) { if (obj.value == '' || (obj.value != '' && !REGEX_EMAIL.test(obj.value))) { errorMsg += "Please enter your email.\n"; } }
+  obj = document.getElementById('IDFormField_State_0'); if (obj != null) { if (obj.value == '') { errorMsg += "\n"; } }
+  obj = document.getElementById('IDFormField_Comments_0'); if (obj != null) { if (obj.value == '') { errorMsg += "Please enter your comments.\n"; } }
+  if( errorMsg !='' ){ alert(errorMsg); return false;}
+return true;
+}
+//]]>
+          </script>
+          <form id="form" name="form" method="post" action="contacts/sendemail.php" onsubmit="return Validator(this)">
+            <div id="halfpage">
+              <div class="half">
+                <p>Por favor ingrese datos en las casillas(*) son requeridos. </p>
+                <fieldset>
+                  <ul class="form-list group-select">
+                    <li>Nombre
+                      <label for="firstname5"> <span class="required">*</span></label>
+                      <br />
+                      <input class="validate[required,custom[onlyLetter],length[0,60]] text-input" type="text" id="IDFormField_First_Name_0" name="formField_First_Name" value="" />
+                    </li>
+                    <li>Apellido
+                      <label for="lastname"> <span class="required">*</span></label>
+                      <br />
+                      <input class="validate[required,custom[onlyLetter],length[0,50]] text-input" type="text" id="IDFormField_Last_Name_0" name="formField_Last_Name" value="" />
+                    </li>
+                    <li>
+                      <div class="input-box">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <br />
+                        <input class="validate[required,custom[email]] text-input" type="text" id="IDFormField_Email_0" name="formField_Email" value="" />
+                      </div>
+                    </li>
+                    <li>
+                      <div class="input-box">
+                        <label for=" Reason for contact:">Razon de contacto:</label>
+                        <br />
+                        <select class="dropmenu" name="formField_Reason for contact" id="IDFormField_Workout_0" size="1">
+                          <option value="" >--Selecion--</option>
+                          <option value="Like" >Pregunta</option>
+                          <option value="Dislike" >Presupuesto</option>
+                          <option value="Inquiry" >Inquietud</option>
+                          </select>
+                        </div>
+                    </li>
+                    <li>
+                      <label for="comment" style=" margin-bottom: 4px !important; display: block;">Comentarios <span class="required">*</span><br />
+                        <em><small style="font-weight: normal;">Escriba su duda, comentario o sugerencia.t.</small></em></label>
+                      <textarea name="formField_Comments" id="IDFormField_Comments_0" style="height:170px;" cols="40" rows="3"></textarea>
+                    </li>
+                  </ul>
+                </fieldset>
+                <div class="buttons-set">
+                  <button type="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div class="photo">
+            <div id="photo_img"></div>
+            <div style="display:none">
+              <input type="hidden" name="hash" value="d8f0e560f48176900161790088d378e1" />
+              <input type="hidden" name="edit_id" value="" />
+              <input type="hidden" name="module" value="" />
+              <input type="hidden" name="src" value="forms" />
+              <input type="hidden" name="srctype" value="process" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container" id="copyright">
+        <div class="span-24"></div>
+      </div>
+      <!-- end #copyright -->
+    </div></td>
+    <td><header>
+      <h1 class="contactus-h1">MB Imagen</h1>
+    </header>
+      <article class="contactus-info">
+        <p>Av. Océano Atlántico #615, <br />
+          Col. Sta. Ma. del Granjeno.<br />
+          MB imagen<br />
+          TEL.:688 80 68 y [477]2234213</p>
+        <center> <div id="map_canvas" style="width: 250px; height: 250px; margin: 5px"></div> </center>
+        <p></p>
+      </article></td>
+  </tr>
+</table>
+
+</section>
+
+<script>
+function submitForm() {
+	$('#contactForm').submit();
+}
+$(document).ready(function(){
+	initialize();
+	var geocoder;
+	var map;
+	function initialize() {
+		geocoder = new google.maps.Geocoder();
+		var myOptions = {
+		  zoom: 16,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var address = '21.135045,-101.658807';
+		geocoder.geocode( { 'address': address}, function(results, status) {
+		  if (status == google.maps.GeocoderStatus.OK) {
+			map.setCenter(results[0].geometry.location);
+			var marker = new google.maps.Marker({
+				map: map, 
+				position: results[0].geometry.location
+			});
+		  } else {
+			alert("Geocode was not successful for the following reason: " + status);
+		  }
+		});
+	}
+
+	Cufon.replace('.contactus-h1', {fontFamily: 'Rockwell'});
+	Cufon.replace('.form-label', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.contactus-info', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.submit-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	
+	$.validator.addMethod("phoneLax", function(phone_number, element) {
+		phone_number = phone_number.replace(/\s+/g, ""); 
+		return this.optional(element) || phone_number.length > 9 &&
+			phone_number.match(/^((\d[-. ]?)?((\(\d{3}\))|\d{3}))?[-. ]?\d{3}[-. ]?\d{4}$/);
+	}, "Please enter a valid phone number.");
+
+
+	$("#contactForm").validate({
+		rules: {
+			name: "required",	
+			phone: {
+				required: true,
+				phoneLax: true
+			},							
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			name: "",
+			phone: "",			
+			email: ""
+		},
+		submitHandler: function(form) {
+			var form_data = $('#contactForm').serialize();
+			$.ajax({
+				url: 'contact_us.php.htm',
+				dataType: 'html',
+				type: "POST",
+				data: form_data,
+				success: function(data) {
+					if(data == 'CAPTCHA') {
+						$('#captcha_code').addClass('error');
+					} else if(data == 'OK') {
+						$('#div_contact_set').hide();
+						$('#div_contact_msg').html("<br/>Thank you for your message. our staff will be with you shortly");
+					} else {
+						$('#div_contact_set').hide();
+						$('#div_contact_msg').html("<br/>Sorry. your message was not sent to Dotty Style Creative. Please try again later.");
+					}
+					Cufon.replace('#div_contact_msg', {fontFamily: 'Gotham-Medium'});		
+				}
+
+			});
+		}
+
+	});
+	
+});	
+</script>

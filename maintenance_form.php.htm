@@ -1,0 +1,257 @@
+<section>
+  <section id="maintenance" class="section-maintenance">
+   <header>
+    <hgroup>
+     <h1 class="maintenance-h1">Maintenance</h1>
+     <h2 class="maintenance-h2">CREDITS</h2>
+    </hgroup>
+   </header>
+	<section class="maintenance-forms">
+				
+		<section class="column-plans">
+			<div class="plan-tab" onclick="changeForm('60')" id="plan60">
+				<div class="plan-name">Plan60</div>
+				<div class="plan-price">$4,799</div>
+			</div>
+			<div class="plan-tab" onclick="changeForm('30')" id="plan30">
+				<div class="plan-name">Plan30</div>
+				<div class="plan-price">$2,6999</div>
+			</div>
+			<div class="plan-tab" onclick="changeForm('10')" id="plan10">
+				<div class="plan-name">Plan10</div>
+				<div class="plan-price">$999</div>
+			</div>
+			<div class="plan-tab" onclick="changeForm('6')" id="plan6">
+				<div class="plan-name">Plan6</div>
+				<div class="plan-price">$660</div>
+			</div>
+			<div class="plan-tab" onclick="changeForm('hourly')" id="planhourly">
+				<div class="plan-name">Hourly</div>
+				<div class="plan-price">$130</div>
+			</div>
+		</section>
+		
+		<section class="column-form">
+			<div id="div_plan60">
+				<header>
+					<h1 class="plan-name-form">PLAN60</h1>
+				</header>
+				<section class="plan-form-content">
+					<h2 class="plan-price-form">
+					$4,799
+					</h2>
+					<article class="plan-text-form">
+						Up to <span class="planbox-text-red">60 hours</span> <br/>
+						Use up to <span class="planbox-text-red">6 months</span><br/>
+						<span class="planbox-text-red">$3,000 worth savings</span><br/>
+						For medium to large companies<br/>
+					</article>
+				</section>
+			</div>
+			<div id="div_plan30">
+				<header>
+					<h1 class="plan-name-form">PLAN30</h1>
+				</header>
+				<section class="plan-form-content">
+					<h2 class="plan-price-form">
+					$2,699
+					</h2>
+					<article class="plan-text-form">
+						Up to <span class="planbox-text-red">30 hours</span> <br/>
+						Use up to <span class="planbox-text-red">3 months</span><br/>
+						<span class="planbox-text-red">$1,200 worth savings</span><br/>
+						For medium companies<br/>
+					</article>
+				</section>
+			</div>
+			<div id="div_plan10">
+				<header>
+					<h1 class="plan-name-form">PLAN10</h1>
+				</header>
+				<section class="plan-form-content">
+					<h2 class="plan-price-form">
+					$999
+					</h2>
+					<article class="plan-text-form">
+						Up to <span class="planbox-text-red">10 hours</span> <br/>
+						Use up to <span class="planbox-text-red">30 days</span><br/>
+						<span class="planbox-text-red">$300 worth savings</span><br/>
+						Ideal for e-store owners<br/>
+					</article>
+				</section>
+			</div>
+			<div id="div_plan6">
+				<header>
+					<h1 class="plan-name-form">PLAN6</h1>
+				</header>
+				<section class="plan-form-content">
+					<h2 class="plan-price-form">
+					$660
+					</h2>
+					<article class="plan-text-form">
+						Up to <span class="planbox-text-red">6 hours</span> <br/>
+						Use up to <span class="planbox-text-red">30 days</span><br/>
+						<span class="planbox-text-red">$120 worth savings</span><br/>
+						Ideal for light users<br/>
+					</article>
+				</section>
+			</div>
+			<div id="div_planhourly">
+				<header>
+					<h1 class="plan-name-form">HOURLY</h1>
+				</header>
+				<section class="plan-form-content">
+					<h2 class="plan-price-form">
+					$130
+					</h2>
+					<article class="plan-text-form">
+						Minimum of <span class="planbox-text-red">2 hours</span> <br/>
+						Use up to <span class="planbox-text-red">30 days</span><br/>
+						Good for quick fixes<br/>
+					</article>
+				</section>
+			</div>
+			<section class="plan-form-box">
+			
+			<form class="cmxform" action="" id="maintenanceForm" method="post">
+				<fieldset class="maintenance-contact-set" id="div_maintenance_set">
+					<ul>
+						<li>
+							<label for="website" class="maintenance-form-label">Website</label>
+							<input name="website" class="maintenance-form-field" type="url" placeholder="http://">
+						</li>
+						<li>
+							<label for="name" class="maintenance-form-label">Name/Company</label>
+							<input name="name" class="maintenance-form-field" type="text" placeholder="Name">
+						</li>
+						<li>
+							<label for="email" class="maintenance-form-label">Email</label>
+							<input name="email" class="maintenance-form-field" type="email" placeholder="youremail@website.com">
+						</li>
+						<li>
+							<label for="phone" class="maintenance-form-label">Phone</label>
+							<input name="phone" class="maintenance-form-field" type="tel" placeholder="(Country) + (Area) + Number">
+						</li>
+						<li>
+							<label for="comments" class="maintenance-form-label">Message</label>
+							<textarea rows="3" name="comments" class="maintenance-form-message" placeholder="What can we do for you?"></textarea>
+						</li>
+						<li>
+						<input type="hidden" name="plan" id="plan" value=""/>
+						<div class="plan-submit-btn"><a href="javascript:submitForm();">Submit</a></div>
+						</li>
+					</ul>
+				</fieldset>
+				<p id="div_maintenance_msg" style="text-align: left;"></p>
+			</form>
+
+			</section>
+		</section>
+		
+		<div class="clear"></div>
+	</section>
+</section>
+<script>
+function submitForm() {
+	$('#maintenanceForm').submit();
+}
+function changeForm(plan) {
+	$('#div_maintenance_set').show();
+	$('#div_maintenance_msg').html("");
+		
+	var arr = ['60', '30', '10', '6', 'hourly'];
+	
+	for(var i = 0; i < arr.length; i++) {
+		if(plan == arr[i]) {
+			$('#plan'+arr[i]).removeClass('plan-tab');
+			$('#plan'+arr[i]).addClass('plan-tab-checked');
+			$('#div_plan'+arr[i]).show();
+			$('#plan').val(plan);
+		} else {
+			$('#plan'+arr[i]).addClass('plan-tab');
+			$('#plan'+arr[i]).removeClass('plan-tab-checked');
+			$('#div_plan'+arr[i]).hide();
+		}
+			
+	}
+	
+}
+
+$(document).ready(function(){
+	changeForm('');
+	Cufon.replace('.maintenance-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.5) 0px 3px'});
+	Cufon.replace('.maintenance-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 3px'});
+	Cufon.replace('.planbox-h1', {fontFamily: 'Rockwell'});
+	Cufon.replace('.planbox-h2', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.planbox-text', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.plan-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	Cufon.replace('.planbox2-h1', {fontFamily: 'Rockwell'});
+	Cufon.replace('.planbox2-h2', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.planbox-text2', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.plan-btn2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	Cufon.replace('.submit-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	
+	Cufon.replace('.plan-name', {fontFamily: 'Rockwell'});
+	Cufon.replace('.plan-price', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.plan-name-form', {fontFamily: 'Rockwell'});
+	Cufon.replace('.plan-price-form', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.plan-text-form', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.maintenance-form-label', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.plan-submit-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	Cufon.replace('.thankyou-message', {fontFamily: 'Gotham-Medium'});
+	Cufon.replace('.thankyou', {fontFamily: 'Rockwell'});
+	Cufon.replace('.close-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.5) 0px 1px'});
+	
+	$.validator.addMethod("phoneLax", function(phone_number, element) {
+		phone_number = phone_number.replace(/\s+/g, ""); 
+		return this.optional(element) || phone_number.length > 9 &&
+			phone_number.match(/^((\d[-. ]?)?((\(\d{3}\))|\d{3}))?[-. ]?\d{3}[-. ]?\d{4}$/);
+	}, "Please enter a valid phone number.");
+
+
+	$("#maintenanceForm").validate({
+		rules: {
+			website: "required",	
+			name: "required",	
+			phone: {
+				required: true,
+				phoneLax: true
+			},							
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			website: "",
+			name: "",
+			phone: "",			
+			email: ""
+		},
+		submitHandler: function(form) {
+			var form_data = $('#maintenanceForm').serialize();
+			$.ajax({
+				url: 'maintenance.php.htm',
+				dataType: 'html',
+				type: "POST",
+				data: form_data,
+				success: function(data) {
+					if(data == 'OK') {
+						$('#div_maintenance_set').hide();
+						$('#div_maintenance_msg').html("<br/>Thank you for your message. our staff will be with you shortly");
+					} else {
+						$('#div_maintenance_set').hide();
+						$('#div_maintenance_msg').html("<br/>Sorry. your message was not sent to Dotty Style Creative. Please try again later.");
+					}
+					Cufon.replace('#div_maintenance_msg', {fontFamily: 'Gotham-Medium'});		
+				}
+
+			});
+		}
+
+	});
+	
+	
+	
+});	
+</script>
