@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MB Imagen -Imprenta Digital.</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple_favicon.png" />
+<link rel="image_src" href="images/postthumb.jpg" />
+<meta charset="utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="description" content="MB imagen" />
+<meta name="author" content="Dottystyle Creative" />
+
+
+
+	<!-- 
+	 http://www.mbimagen.com
+     http://www.mbiimagen.com
+	 MB imagen Creatividad 
+     MB imagen imprenta digital     
+	 Built by EfrainTE moxy
+	-->
+
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+window.location = "http://daliimagencom"
+</script>
+<![endif]-->
+
+<link rel="stylesheet" href="styles/main-pingo.css" />
+
+<link rel="stylesheet" media="screen and min-device-pixel-ratio: 0" href="styles/safari.css"/>
+
+<script>
+document.createElement('header');
+document.createElement('footer');
+document.createElement('section');
+document.createElement('aside');
+document.createElement('nav');
+document.createElement('article');
+</script>
+
+<script src="scripts/jquery.js"></script>
+
+<script src="scripts/jquery.scrollTo-1.4.2.js"></script>
+<script src="scripts/dotty-slider2.js"></script>
+
+<script src="scripts/iscroll.js"></script>
+
+<script src="scripts/jquery.cycle.all.min.js"></script>
+<script src="scripts/jquery.validate.min.js"></script>
+
+<script src="fancybox/jquery.easing-1.3.pack.js"></script>
+<script src="fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+<script src="fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.1.css" media="screen" />
+
+<script src="scripts/cufon-yui.js"></script>
+<script src="scripts/Gotham-Medium_400.font.js" ></script>
+<script src="scripts/Rockwell_400.font.js" ></script>
+<script src="scripts/Santa_Fe_LET_500.font.js" ></script>
+
+<script src="scripts/jquery.form.js"></script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12618872-1']);
+  _gaq.push(['_trackPageview' , 'Homepage']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+</script>
+
+
+<script type="text/javascript">
+var myScroll;
+
+function loaded() {
+	setTimeout( function() {
+		document.ontouchmove = function(e) { e.preventDefault(); return false; }
+		myScroll = new iScroll( document.getElementById('scroller') );
+	}, 100);
+	
+}
+
+
+window.addEventListener('load', loaded, true);
+
+$(window).scroll(function () {
+   
+}
+
+</script>
+
+<script>
+(function($) {
+  var cache = [];
+  // Arguments are image paths relative to the current page.
+  $.preLoadImages = function() {
+    var args_len = arguments.length;
+    for (var i = args_len; i--;) {
+      var cacheImage = document.createElement('img');
+      cacheImage.src = arguments[i];
+      cache.push(cacheImage);
+    }
+  }
+})(jQuery)
+
+jQuery.preLoadImages("images/maintenance-bg.png","images/contact-bg.png","images/maintenance-btn.png","images/maintenance-btn-h.png","images/fb-icon-h.jpg","images/twitter-icon-h.jpg","images/planbox-bg.jpg","images/planbox2-bg.jpg","images/maintenance-form-bg.png","images/plan-tab.png","images/plan-tab-check.png","images/view-btn.png","images/view-btn-h.png"); 
+ 
+</script>
+
+<script>
+$(document).ready(function(){
+	$('.boxgrid.peek').hover(function(){
+		$(".cover", this).stop().animate({top:'40px'},{queue:false,duration:160});
+	}, function() {
+		$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:160});
+	});
+});
+</script>
+
+<script>
+
+document.onmousewheel = function(){ stopWheel(); } /* IE7, IE8 */
+if(document.addEventListener){ /* Chrome, Safari, Firefox */
+    document.addEventListener('DOMMouseScroll', stopWheel, false);
+}
+ 
+function stopWheel(e){
+	
+    //if(!e){ e = window.event; } /* IE7, IE8, Chrome, Safari */
+    //if(e.preventDefault) { e.preventDefault(); } /* Chrome, Safari, Firefox */
+    //e.returnValue = false; /* IE7, IE8 */
+    
+}
+
+	
+	$('#main-content').css('width',$(window).width()); 
+	$('.background-bg5').css('min-height',$(window).height());
+		
+	$('.box').css('width',$(window).width()); 
+	$('.box').css('min-height',$(window).height());
+	
+	$(window).resize(function() {
+		$('#main-content').css('width',$(window).width()); 
+		$('.background-bg5').css('min-height',$(window).height());
+		
+		$('.box').css('width',$(window).width()); 
+		$('.box').css('min-height',$(window).height());
+	});
+	
+	
+
+
+	$(document).ready(function() {
+		
+		function myClose() {
+			$('#div_contact_set').show();
+			$('#div_contact_msg').hide();
+		}
+		
+		$(".fancy-inline").fancybox({
+			'autoScale'			: true,
+			'titleShow'		    : false,
+			'titlePosition'		: 'inside',
+			'transitionIn'		: 'fade',
+			'transitionOut'		: 'fade',	
+		});
+		
+		$(".fancy-inline-elastic").fancybox({
+			'autoScale'			: true,
+			'titleShow'		    : false,
+			'titlePosition'		: 'inside',
+			'transitionIn'		: 'elastic',
+			'transitionOut'		: 'elastic',
+			'onClosed'   		: myClose,
+		});
+		
+	});
+	
+	Cufon.replace('#top-nav', {fontFamily: 'Rockwell', hover: true,});
+	Cufon.replace('.sub-nav', {fontFamily: 'Rockwell', hover: true,});
+	Cufon.replace('.home-tab', {fontFamily: 'Rockwell', hover: true,});
+	Cufon.replace('.footer-contact', {fontFamily: 'Rockwell', hover: true});
+	Cufon.replace('.home-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.home-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.home-text', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});	
+	Cufon.replace('.about-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.about-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.about-text', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});	
+	Cufon.replace('.partners-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.partners-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.partners-text', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});	
+	Cufon.replace('.services-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.services-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.services-h3-1', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.services-h3-2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});	
+	Cufon.replace('.services-text-creative', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});
+	Cufon.replace('.services-text-development', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});
+	Cufon.replace('.folio-description', {fontFamily: 'Gotham-Medium'});	
+	Cufon.replace('.folio-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.folio-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.latest-h1', {fontFamily: 'Santa Fe LET', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.latest-h2', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 3px'});
+	Cufon.replace('.latest-text', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});
+	Cufon.replace('.latest-h3', {fontFamily: 'Gotham-Medium', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});
+	Cufon.replace('.view-btn', {fontFamily: 'Rockwell', textShadow: 'rgba(51, 51, 51, 0.9) 0px 1px'});
+	
+	
+</script>
+
+
+</head>
+
+<body>
+
+<div class="box" id="box">
+
+	<header id="header">
+			<section id="header-container">
+				<figure id="logo">
+					<a href="default.htm" title="MB Imagen"><img alt="Dottystyle Creative" src="images/logo.jpg" /></a>
+				</figure>
+				<nav id="top-nav">
+					<ul class="navigation">
+	                    <li><a href="#home-section" title="Inicio" class="scrolltoanchor" onClick="_gaq.push(['_trackPageview', 'Homepage']);">Inicio</a></li>
+						<li><a href="#about-section" title="Nosotros" class="scrolltoanchor" onClick="_gaq.push(['_trackPageview', 'About']);">Nosotros</a></li>
+						<li><a href="#services-section" title="Servicios" class="scrolltoanchor" onClick="_gaq.push(['_trackPageview', 'Services']);">Servicios</a></li>
+						<li class="last"><a href="#portfolio-section" title="Trabajos" class="scrolltoanchor" onClick="_gaq.push(['_trackPageview', 'Portfolio']);">trabajos</a></li>
+						<!--<li class="last"><a class="fancy-inline" href="work_for_us.html" title="Work For Us" onClick="_gaq.push(['_trackPageview', 'Work']);">Work For Us</a></li>-->
+					</ul>
+				</nav>
+			</section>
+	</header>
+
+<div id="wrapper"><div id="scroller">
+
+<section id="main-content">
+			<div class="content-wrapper" id="home-section">
+				<div class="background-bg1">
+					<section class="content">
+						<figure class="home-photo">
+						<img alt="Dottystyle Creative" src="images/home-image.png" />
+						</figure>
+						<section class="home-content">
+							<header>
+								<hgroup>
+									<h1 class="home-h1">Bienvenidos a</h1>
+									<h2 class="home-h2">MB imagen</h2>
+								</hgroup>
+							</header>
+							<article class="home-text">
+							<p>Imprenta digital MB. Gracias al esfuerzo y profesionalismo de nuestra gente, en 2013 la empresa logra posicionarse en el mercado de<span class="highlight"> IMAGEN , IMPRESION  </span> y soluciones de publicidad en la ciudad de <span class="highlight">LEON.</span> a experiencia que nos respaldan, son de   <span class="highlight"> EVOLUCION </span> y mejora continua los que sustentan nuestra historia.</p> 
+							<p class="download">
+                            <a href="#latest-section" class="scrolltoanchor" title="Checkout Pingo For Tots!" onClick="recordOutboundLink(this, 'Outbound Links', 'pingo');return false;"><img alt="Pingo For Tots!" src="folio/pingo-button.png" /></a>
+                            </p> 
+                            </article>
+                            
+                            <!--
+                            	<ul class="home-tab">
+								<li><a href="#latest-section" class="scrolltoanchor" onClick="javascript: pageTracker._trackPageview('Latest');">view our latest work</a></li>
+								<li><a class="fancy-inline" href="maintenance.html" title="Website Maintenance" style="background: none;" onClick="_gaq.push(['_trackPageview', 'Maintenance']);">our latest promo</a></li>
+								</ul>
+							-->
+							
+						</section>
+						<div class="clear"></div>
+					</section>
+				</div>
+			</div>
+			
+			
+			<div class="content-wrapper" id="latest-section">
+				<div class="background-pingo">
+					<section class="content">
+						<figure class="latest-photo">
+							<img alt="Pingo For Tots!" src="folio/latest-pingo.png" />
+						</figure>
+						<section class="latest-content">
+							<header>
+								<hgroup>
+									<img alt="Pingo For Tots!" src="folio/latest-logo-pingo.png" />
+								</hgroup>
+							</header>
+							<article class="latest-text">
+							<p>Ofrecemos el cambio de imagen para tu CORPORACION, empresa o  negocio. </p>
+                            <p>APLICACIONES app PARA iPad, android, pc,  mac,  por solo  $8000 pesos!</p>
+							<p>Ver mas Informes de web-ad, <a href="#" target="_blank" title="Dali Informa" onClick="recordOutboundLink(this, 'Outbound Links', 'pingofortots.com');return false;">click here!</a></p>
+							<p>visita  MB imagen/ app <a href="http://www.mbimagen.com" target="_blank" title="Dali APp" onClick="recordOutboundLink(this, 'Outbound Links', 'pingofortots.com');return false;">www.mbimagen.com</a></p>
+							<!--
+                            <div class="view-btn"><a href="http://www.yourfriendshouse.com" target="_blank" title="We Are Your Friends" onClick="recordOutboundLink(this, 'Outbound Links', 'sportingdna.com');return false;">View Website</a></div>
+                            -->
+                            <p class="download">
+                            <a href="#" target="_blank" title="Download APP MB Imagen" onClick="recordOutboundLink(this, 'Outbound Links', 'downloadpingo');return false;"><img alt="Pingo For Tots!" src="folio/appstore.png" /> </a><a href="#" target="_blank" title="Download APP Dali Imagen" onClick="recordOutboundLink(this, 'Outbound Links', 'downloadpingo');return false;"><img alt="Pingo For Tots!" src="folio/appstore2.png" /></a></p>
+                            </article>                            
+						</section>
+						<div class="clear"></div>
+					</section>
+				</div>
+			</div>
+						
+			
+			<div class="content-wrapper" id="about-section">
+				<div class="background-bg3">
+					<section class="content">
+						<section class="about-content1">                        	
+                        	<figure class="home-photo">
+                                    <img alt="Design" src="images/ico-design.png" />
+                                </figure>
+                                <div class="clear"></div>
+							<header>								
+									<h2 class="about-h2">Mision</h2>
+							</header>
+							<article class="about-text">
+							<p>Crecer  como  competidor  multinacional  en  el  mercado  de Arte Digital 
+inspirando orgullo, PASION y compromiso, generando valor para nuestros 
+grupos de INTERES.</p>
+                            </article>
+						</section>
+                        
+                        <section class="about-content2">
+                        	<figure class="home-photo">
+                                    <img alt="Develop" src="images/ico-develop.png" />
+                                </figure>
+                                <div class="clear"></div>
+							<header>								
+									<h2 class="about-h2">Vision</h2>
+							</header>
+							<article class="about-text">
+							<p>Incrementar  nuestro  liderazgo  consistentemente  generando  mejores 
+productos y servicios a nuestros clientes y su mercado, manteniendo la 
+rentabilidad y RENOVACION constante.</p>
+                            </article>
+						</section>
+                        
+                        <section class="about-content3">
+                        	<figure class="home-photo">
+                                    <img alt="Deliver" src="images/ico-deliver.png" />
+                                </figure>
+                                <div class="clear"></div>
+							<header>								
+									<h2 class="about-h2">Valores</h2>
+							</header>
+							<article class="about-text">
+							<p>El  activo  más  importante  y  clave  en el EXITO de Imprenta Digital MB es 
+su equipo humano, altamente calificado  tanto  en  el uso de la TECNOLOGIA 
+como  en  el  conocimiento  funcional  de  las AREAS de negocio en las que 
+desarrolla su labor.</p>
+                            </article>
+						</section>
+
+						<div class="clear"></div>                        
+                        <section class="about-content4"><article class="sub-nav">
+                        <!-- <a href="#partners-section" title="Partners" class="scrolltoanchor" onClick="_gaq.push(['_trackPageview', 'Partners']);">Our Partners</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+                        <a href="#portfolio-section" title="Trabajos Dali Imagen" class="scrolltoanchor">Nuestros Trabajos</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#services-section" title="Servicios Dali Imagen" class="scrolltoanchor">Nuestros Servicios</a></article></section>
+                        
+					</section>
+				</div>
+			</div>
+			
+			<!--			
+            <div class="content-wrapper" id="partners-section">
+				<div class="background-bg3">
+					<section class="content">
+	                    <header>
+                            <hgroup>
+                                <h1 class="partners-h1">Dottystyle</h1>
+                                <h2 class="partners-h2">PARTNERS</h2>
+                            </hgroup>
+                        </header>
+						<section class="partners-content1">                        	
+                        	<figure class="home-photo">
+                                    <img alt="Design" src="images/ico-ws.png" />
+                                </figure>
+                                <div class="clear"></div>
+							<article class="partners-text">
+							<p>Dottystyle Creative partners with Websalad for all our client's internet marketing needs. Websalad offers services in SEO, PPC, social media and conversion optimisation.<br/>Visit <a href="http://www.websalad.com.au/" target="_blank" onClick="_gaq.push(['_trackPageview', 'Websalad - Link']);">Websalad</a></p>
+                            </article>
+						</section>
+                        
+                        <section class="partners-content2">
+                        	<figure class="home-photo">
+                                    <img alt="Develop" src="images/ico-mt.png" />
+                                </figure>
+                                <div class="clear"></div>
+							<article class="partners-text">
+							<p>Dottystyle Creative partners with Media Temple for all our client's domain and hosting needs. Media Temple  is a web hosting and virtualization service provider.<br/>Visit <a href="http://www.mediatemple.net/go/order/?refdom=dottylabs.com" target="_blank" onClick="_gaq.push(['_trackPageview', 'MediaTemple - Link']);">Media Temple</a></p>
+                            </article>
+						</section>
+
+						<div class="clear"></div>                        
+                        <section class="partners-content4"><article class="sub-nav">
+                        	<a class="fancy-inline" href="contact_us.html" title="Contact Us" onClick="_gaq.push(['_trackPageview', 'Contact us']);">Become a Dottystyle Partner</a>
+                        </article></section>
+                        
+					</section>
+				</div>
+			</div>
+            
+            -->
+			
+			<div class="content-wrapper" id="services-section">
+				<div class="background-bg2">
+					<section class="content">
+							<header>
+								<hgroup>
+									<h1 class="services-h1">Imprenta Digital</h1>
+									<h2 class="services-h2">MB imagen.</h2>
+									<div class="services-h3-div">
+										<h3 class="services-h3-1">Servicio.</h3>
+										<h3 class="services-h3-2">pRODUCTOS.</h3>
+										<div class="clear"></div>
+									</div>
+								</hgroup>
+							</header>
+							<aside class="services-text-creative">
+							Web e iamgen Grafica <br />
+							Imagen Corporativa <br />
+							Flash websites, presentaciones Interactivas  <br />
+							E-learning / Modulos intercativos/ Training CD-ROMS <br />
+							FOTOGRAFIA  <br />
+							Smart phone apps<br />
+							FOTOGRAFIA Y VIDEO AEREO <br />
+							</aside>
+							<aside class="services-text-development">
+							IMPRESION de Lona EN TELA, VINIL AUTOADEHERIBLE  de ALTA DEFINICION<br />
+                            IMPRESION de Vinil, Microperforado<br />
+							ESPECTACULARES<br />
+                            Offset ( Foleltos, tarjetas, revistas etc)<br />
+							Recorte de vinil<br />
+							ROTULACION de Automoviles y motocilcetas<br />
+							<a class="fancy-inline" href="maintenance.html" title="Website Maintenance" style="margin:0 0 0 -5px !important;" onClick="_gaq.push(['_trackPageview', 'Maintenance']);">Ofertas</a><br />
+                            
+							</aside>
+							<div class="clear"></div>
+					</section>
+				</div>
+			</div>	
+			
+			
+			<div class="content-wrapper" id="portfolio-section">
+				<div class="background-bg5">
+					<section class="content">
+                        <section class="folio-content">
+							<header>
+								<hgroup>
+									<h1 class="folio-h1">MB imagen</h1>
+									<h2 class="folio-h2">Trabajos</h2>
+								</hgroup>
+							</header>
+                            
+
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Revista  Alternative > </figcaption>
+						<a href="#" target="_blank" title="nombre" onClick="_gaq.push(['_trackPageview', 'Portfolio/ONSIGHT']);"><img class="cover" src="folio/onsight-thumb.jpg" alt="nombre" /></a>
+						</figure>	
+						
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Recorte de Vinil > </figcaption>
+						<a href="#" target="_blank" title="nombre2" onClick="_gaq.push(['_trackPageview', 'Portfolio/SPANA']);"><img class="cover" src="folio/spana.jpg" alt="nombre de la web" /></a>
+						</figure>						
+
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">ROTULACION DE Vehiculos > </figcaption>
+						<a href="#/" target="_blank" title="Nike Sydney" onClick="_gaq.push(['_trackPageview', 'Portfolio/NIKESYDNEY']);"><img class="cover" src="folio/nikesydney.jpg" alt="Nike Sydney" /></a>
+						</figure>
+						
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">The Purple Company > </figcaption>
+						<a href="#" target="_blank" title="Your Care" onClick="_gaq.push(['_trackPageview', 'Portfolio/PURPLE']);"><img class="cover" src="folio/purple.jpg" alt="The Purple Company" /></a>				
+						</figure>
+
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Your Care > </figcaption>
+						<a href="#" target="_blank" title="Your Care" onClick="_gaq.push(['_trackPageview', 'Portfolio/CARE']);"><img class="cover" src="folio/yourcare.jpg" alt="Your Care" /></a>
+						</figure>
+						
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Firebrand Talents > </figcaption>
+						<a href="#" target="_blank" title="Firebrand Talents" onClick="_gaq.push(['_trackPageview', 'Portfolio/FIRE']);"><img class="cover" src="folio/fb.jpg" alt="Your Care" /></a>
+						</figure>
+
+
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Eloquent Staffing > </figcaption>
+						<a href="#" target="_blank" title="Eloquent Staffing" onClick="_gaq.push(['_trackPageview', 'Portfolio/ELO']);"><img class="cover" src="folio/elo.jpg" alt="Eloquent Staffing" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Body Doctor > </figcaption>
+						<a href="#" target="_blank" title="Body Doctor" onClick="_gaq.push(['_trackPageview', 'Portfolio/BODY']);"><img class="cover" src="folio/body.jpg" alt="Body Doctor" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Chris John Savage > </figcaption>
+						<a href="#" target="_blank" title="Chris John Savage" onClick="_gaq.push(['_trackPageview', 'Portfolio/CHRIS']);"><img class="cover" src="folio/chris.jpg" alt="Chris John Savage" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Child Play > </figcaption>
+						<a href="#" target="_blank" title="Child Play" onClick="_gaq.push(['_trackPageview', 'Portfolio/CHILD']);"><img class="cover" src="folio/child.jpg" alt="Child Play" /></a>
+						</figure>
+						
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Websalad > </figcaption>
+						<a href="#" target="_blank" title="Websalad" onClick="_gaq.push(['_trackPageview', 'Portfolio/SALAD']);"><img class="cover" src="folio/salad.jpg" alt="Websalad" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Shake It Up > </figcaption>
+						<a href="#" target="_blank" title="Shake It Up" onClick="_gaq.push(['_trackPageview', 'Portfolio/SHAKE']);"><img class="cover" src="folio/shake.jpg" alt="Shake It Up" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Sydney Altitude Training > </figcaption>
+						<a href="#" target="_blank" title="Sydney Altitude Training" onClick="_gaq.push(['_trackPageview', 'Portfolio/SAT']);"><img class="cover" src="folio/alti.jpg" alt="Sydney Altitude Training" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Easyremote Online > </figcaption>
+						<a href="#" target="_blank" title="Easyremote Online" onClick="_gaq.push(['_trackPageview', 'Portfolio/ERO']);"><img class="cover" src="folio/ero.jpg" alt="Easyremote Online" /></a>
+						</figure>
+                        
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">We Are Your Friends > </figcaption>
+						<a href="#" target="_blank" title="We Are Your Friends" onClick="_gaq.push(['_trackPageview', 'Portfolio/WAYF']);"><img class="cover" src="folio/wayf.jpg" alt="We Are Your Friends" /></a>
+						</figure>
+						
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Sporting DNA > </figcaption>
+						<a href="#" target="_blank" title="Sporting DNA" onClick="_gaq.push(['_trackPageview', 'Portfolio/SDNA']);"><img class="cover" src="folio/sdna.jpg" ALT="Sporting DNA" /></a>
+						</figure>
+                        
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Kiss The Frog > </figcaption>
+						<a href="#" target="_blank" title="Kiss The Frog" onClick="_gaq.push(['_trackPageview', 'Portfolio/KissTheFrog']);"><img class="cover" src="folio/ktf.jpg" alt="Kiss The Frog" /></a>
+						</figure>                        
+                        
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Philtravel Holidays > </figcaption>
+						<a href="#" target="_blank" title="Philtravel Holidays" onClick="_gaq.push(['_trackPageview', 'Portfolio/Philtravel']);"><img class="cover" src="folio/philtravel.jpg" alt="Philtravel Holidays"/></a>
+						</figure>
+												
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Vinos Online > </figcaption>
+						<a href="#" target="_blank" title="Vinos Online" onClick="_gaq.push(['_trackPageview', 'Portfolio/Vinos']);"><img class="cover" src="folio/vinos.jpg"  alt="Vinos Online" /></a>
+						</figure>
+                        
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Park Patrol > </figcaption>
+						<a href="#" target="_blank" title="Park Patrol" onClick="_gaq.push(['_trackPageview', 'Portfolio/ParkPatrol']);"><img class="cover" src="folio/parkpatrol.jpg" alt="Park Patrol" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Colonial Estate eCard > </figcaption>
+						<a href="work/colonial/default.html" target="_blank" title="Colonial Estate eCard" onClick="_gaq.push(['_trackPageview', 'Portfolio/Colonial']);"><img class="cover" src="folio/colonial.jpg" alt="Colonial Estate eCard" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Campaign Master eCard > </figcaption>
+						<a href="#" target="_blank" title="Campaign eCard" onClick="_gaq.push(['_trackPageview', 'Portfolio/Campaign']);"><img class="cover" src="folio/campaign.jpg" alt="Campaign eCard"/></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Lucky You > </figcaption>
+						<a href="#" target="_blank" title="Lucky You" onClick="_gaq.push(['_trackPageview', 'Portfolio/Lucky']);"><img class="cover" src="folio/lucky.jpg" alt="Lucky You" /></a>
+						</figure>
+						
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Newtown Art Supplies > </figcaption>
+						<a href="#" target="_blank" title="Newtown Art Supplies" onClick="_gaq.push(['_trackPageview', 'Portfolio/Newtown']);"><img class="cover" src="folio/newtown.jpg" alt="Newtown Art Supplies" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Paws About > </figcaption>
+						<a href="#" target="_blank" title="Paws About" onClick="_gaq.push(['_trackPageview', 'Portfolio/Paws']);"><img class="cover" src="folio/paws.jpg" alt="Paws About"/></a>
+						</figure>
+						
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Stobi > </figcaption>
+						<a href="#" target="_blank" title="Stobi" onClick="_gaq.push(['_trackPageview', 'Portfolio/Stobi']);"><img class="cover" src="folio/stobi.jpg" alt="Stobi" /></a>
+						</figure>
+                        
+                        <figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Maxim > </figcaption>
+						<a href="#" target="_blank" title="Maxim Health and Fitness" onClick="_gaq.push(['_trackPageview', 'Portfolio/Maxim']);"><img class="cover" src="folio/maxim.jpg" alt="Maxim Health and Fitness"/></a>
+						</figure>
+                        
+                        
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">A.G. White > </figcaption>
+						<a href="#" target="_blank" title="A.G. White" onClick="_gaq.push(['_trackPageview', 'Portfolio/AG']);"><img class="cover" src="folio/agwhite.jpg" alt="A.G. White" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Latino Life > </figcaption>
+						<a href="#" target="_blank" title="latinolife" onClick="_gaq.push(['_trackPageview', 'Portfolio/Latino']);"><img class="cover" src="folio/latinolife.jpg" alt="Latino Life" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Novo > </figcaption>
+						<a href="#" target="_blank" title="Novo" onClick="_gaq.push(['_trackPageview', 'Portfolio/Novo']);"><img class="cover" src="folio/novo.jpg" alt="Novo" /></a>
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Advance MT Data > offline</figcaption>
+						<img class="cover" src="folio/advance.jpg" alt="Advance MT Data" />
+						</figure>	
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Easy Trip > offline</figcaption>
+						<img class="cover" src="folio/easytrip.jpg" alt="Easy Trip" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">EEG Website > offline</figcaption>
+						<img class="cover" src="folio/eeg.jpg" alt="EEG Website" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Evolution > offline</figcaption>
+						<img class="cover" src="folio/evolution.jpg" alt="Evolution" />
+						</figure>		
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Folded & Hung > offline</figcaption>
+						<img class="cover" src="folio/fnh.jpg" alt="F&H" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">GCJ > offline</figcaption>
+						<img class="cover" src="folio/gcj.jpg" alt="GCJ" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Group eMedia > offline</figcaption>
+						<img class="cover" src="folio/groupemedia.jpg" alt="Group eMedia" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Island Park Website > offline</figcaption>
+						<img class="cover" src="folio/islandpark.jpg" alt="Island Park" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Julian Wolkenstein > offline</figcaption>
+						<img class="cover" src="folio/julian.jpg" alt="Julian Wolkenstein" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Peco Pallet > offline</figcaption>
+						<img class="cover" src="folio/peco.jpg" alt="Peco Pallet" />
+						</figure>
+						
+						<figure class="boxgrid peek folio-item">
+						<figcaption class="folio-description">Side V > offline</figcaption>
+						<img class="cover" src="folio/sidev.jpg" alt="Side V" />
+						</figure>
+						
+
+						<div class="clear"></div>
+                    	</section>
+					</section>
+				</div>
+			</div>	
+
+
+</section>
+
+
+</div></div>
+
+<footer id="footer">
+	<section id="footer-container">
+		<section class="footer-social">
+			<div class="facebook-icon"><a href="http://www.facebook.com/" title="Facebook Dali Iamgen" target="_blank" onClick="_gaq.push(['_trackPageview', 'Facebook']);">Facebook</a></div>
+			<div class="twitter-icon"><a href="http://twitter.com/" title="Twitter Dali Imagen" target="_blank" onClick="_gaq.push(['_trackPageview', 'Twitter']);">Twitter</a></div>
+		</section>
+		<section class="footer-contact"><a class="fancy-inline-elastic" href="contacts/default2.htm" title="Contacto Dali Imagen"  onClick="_gaq.push(['_trackEvent', 'Nav', 'Click', 'Contact']);">Contacto</a></section>
+	</section>
+</footer>
+
+
+</div>
+	
+<script type="text/javascript"> Cufon.now(); </script>
+
+</body>
+</html>
